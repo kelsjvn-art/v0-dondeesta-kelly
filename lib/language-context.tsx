@@ -47,6 +47,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Collaboration categories
     "category.destinations.title": "Destination & Tourism",
+    "category.destinations.subtitle": "Cinematic stories for tourism boards and destinations",
     "category.destinations.about":
       "I build partnerships with destinations and tourism organizations to create visual travel stories that showcase the landscapes, culture and identity of a place. Through cinematic storytelling and photography, the goal is to inspire travelers to explore destinations in an authentic and meaningful way.",
     "category.destinations.content":
@@ -55,6 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
       "tourism boards / destination marketing organizations / regional tourism offices / national parks and protected areas / tourism campaigns and travel initiatives",
 
     "category.hotels.title": "Hotels & Unique Stays",
+    "category.hotels.subtitle": "Visual storytelling for hotels, resorts and unique stays",
     "category.hotels.about":
       "I create partnerships with hotels, resorts and unique stays to tell visual stories that highlight the experience of staying in a destination. The focus goes beyond the property itself, capturing the atmosphere, the surrounding landscape and the moments that make a stay memorable.",
     "category.hotels.content":
@@ -63,6 +65,7 @@ const translations: Record<Language, Record<string, string>> = {
       "boutique hotels / luxury hotels / hotel groups and international hotel chains / resorts and wellness resorts / eco lodges / glamping experiences / retreats and unique stays",
 
     "category.brands.title": "Travel Brand",
+    "category.brands.subtitle": "Authentic content for travel and outdoor brands",
     "category.brands.about":
       "I develop partnerships with travel and outdoor brands whose products are part of real travel experiences. Through authentic journeys and storytelling, products are naturally integrated into the adventure.",
     "category.brands.content":
@@ -71,6 +74,7 @@ const translations: Record<Language, Record<string, string>> = {
       "travel gear brands / outdoor and adventure brands / luggage companies / travel insurance companies / connectivity services (eSIM providers) / digital travel tools and travel technology",
 
     "category.platforms.title": "Travel Platforms & Experiences",
+    "category.platforms.subtitle": "Immersive content for platforms and experience providers",
     "category.platforms.about":
       "I build partnerships with travel platforms and experience providers to showcase activities that make travel more immersive and memorable. Through visual storytelling, the content highlights the emotional and experiential side of travel.",
     "category.platforms.content":
@@ -79,6 +83,7 @@ const translations: Record<Language, Record<string, string>> = {
       "experience platforms / activity marketplaces / tour operators / travel booking platforms / adventure tour companies",
 
     "category.airlines.title": "Transportation",
+    "category.airlines.subtitle": "Journey storytelling for airlines, trains and road trips",
     "category.airlines.about":
       "Transportation is an essential part of the travel experience. I build partnerships with transportation companies to showcase the journey itself and the destinations it connects. Through visual storytelling, the focus is on documenting the travel experience from departure to arrival.",
     "category.airlines.content":
@@ -153,6 +158,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Collaboration categories
     "category.destinations.title": "Destinos y Turismo",
+    "category.destinations.subtitle": "Historias cinematográficas para destinos y juntas de turismo",
     "category.destinations.about":
       "Construyo alianzas con destinos y organizaciones de turismo para crear historias visuales de viaje que muestren los paisajes, la cultura y la identidad de un lugar. A través del storytelling cinematográfico y la fotografía, el objetivo es inspirar a los viajeros a explorar destinos de manera auténtica y significativa.",
     "category.destinations.content":
@@ -161,6 +167,7 @@ const translations: Record<Language, Record<string, string>> = {
       "juntas de turismo / organizaciones de marketing de destinos / oficinas regionales de turismo / parques nacionales y áreas protegidas / campañas de turismo e iniciativas de viaje",
 
     "category.hotels.title": "Hoteles y Alojamientos",
+    "category.hotels.subtitle": "Storytelling visual para hoteles, resorts y alojamientos únicos",
     "category.hotels.about":
       "Creo alianzas con hoteles, resorts y alojamientos únicos para contar historias visuales que destaquen la experiencia de hospedarse en un destino. El enfoque va más allá de la propiedad en sí, capturando la atmósfera, el paisaje circundante y los momentos que hacen memorable una estadía.",
     "category.hotels.content":
@@ -169,6 +176,7 @@ const translations: Record<Language, Record<string, string>> = {
       "hoteles boutique / hoteles de lujo / grupos hoteleros y cadenas internacionales / resorts y resorts de bienestar / eco lodges / experiencias de glamping / retiros y alojamientos únicos",
 
     "category.brands.title": "Marcas de Viaje",
+    "category.brands.subtitle": "Contenido auténtico para marcas de viajes y outdoor",
     "category.brands.about":
       "Desarrollo alianzas con marcas de viajes y outdoor cuyos productos forman parte de experiencias de viaje reales. A través de viajes auténticos y storytelling, los productos se integran de forma natural en la aventura.",
     "category.brands.content":
@@ -177,6 +185,7 @@ const translations: Record<Language, Record<string, string>> = {
       "marcas de equipamiento de viaje / marcas de outdoor y aventura / empresas de equipaje / compañías de seguros de viaje / servicios de conectividad (proveedores de eSIM) / herramientas digitales de viaje y tecnología",
 
     "category.platforms.title": "Plataformas y Experiencias",
+    "category.platforms.subtitle": "Contenido inmersivo para plataformas y proveedores de experiencias",
     "category.platforms.about":
       "Construyo alianzas con plataformas de viaje y proveedores de experiencias para mostrar actividades que hacen los viajes más inmersivos y memorables. A través del storytelling visual, el contenido destaca el lado emocional y experiencial del viaje.",
     "category.platforms.content":
@@ -185,6 +194,7 @@ const translations: Record<Language, Record<string, string>> = {
       "plataformas de experiencias / marketplaces de actividades / operadores turísticos / plataformas de reservas de viaje / empresas de tours de aventura",
 
     "category.airlines.title": "Transporte",
+    "category.airlines.subtitle": "Storytelling de viaje para aerolíneas, trenes y road trips",
     "category.airlines.about":
       "El transporte es una parte esencial de la experiencia de viaje. Construyo alianzas con empresas de transporte para mostrar el viaje en sí y los destinos que conecta. A través del storytelling visual, el enfoque está en documentar la experiencia de viaje de principio a fin.",
     "category.airlines.content":
