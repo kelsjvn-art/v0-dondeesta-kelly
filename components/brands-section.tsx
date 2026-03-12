@@ -33,7 +33,7 @@ export function BrandsSection() {
           {brands.map((brand) => (
             <div
               key={brand.name}
-              className="group relative aspect-[3/2] rounded-2xl border border-border/40 bg-background overflow-hidden flex items-center justify-center p-4 transition-all duration-300 hover:scale-105 hover:shadow-md"
+              className="group relative aspect-[3/2] flex items-center justify-center p-4 transition-all duration-300 hover:scale-105"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
