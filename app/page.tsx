@@ -121,18 +121,32 @@ function PageContent() {
 
       {/* About Section */}
       <section id="about" className="py-20 md:py-28 px-6 bg-background">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8 tracking-tight">
-            {t("about.title")}
-          </h2>
-          <div className="space-y-5">
-            {t("about.description")
-              .split("\n")
-              .map((paragraph, i) => (
-                <p key={i} className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
+            {/* Image — left column */}
+            <div className="w-full md:w-2/5 flex-shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/Foto-Bio.jpeg"
+                alt="Kelly Vega"
+                className="w-full h-[520px] md:h-[640px] object-cover object-top rounded-2xl"
+              />
+            </div>
+            {/* Text — right column */}
+            <div className="w-full md:w-3/5">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8 tracking-tight">
+                {t("about.title")}
+              </h2>
+              <div className="space-y-5">
+                {t("about.description")
+                  .split("\n")
+                  .map((paragraph, i) => (
+                    <p key={i} className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
