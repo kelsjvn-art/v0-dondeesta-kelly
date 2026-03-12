@@ -68,6 +68,7 @@ function PageContent() {
       contentKey: "category.destinations.content",
       idealForKey: "category.destinations.idealfor",
       image: images.collaborations.destinations,
+      galleryKey: "destinations" as const,
     },
     {
       titleKey: "category.hotels.title",
@@ -75,6 +76,7 @@ function PageContent() {
       contentKey: "category.hotels.content",
       idealForKey: "category.hotels.idealfor",
       image: images.collaborations.hotels,
+      galleryKey: "hotels" as const,
     },
     {
       titleKey: "category.brands.title",
@@ -82,6 +84,7 @@ function PageContent() {
       contentKey: "category.brands.content",
       idealForKey: "category.brands.idealfor",
       image: images.collaborations.brands,
+      galleryKey: "brands" as const,
     },
     {
       titleKey: "category.platforms.title",
@@ -89,6 +92,7 @@ function PageContent() {
       contentKey: "category.platforms.content",
       idealForKey: "category.platforms.idealfor",
       image: images.collaborations.platforms,
+      galleryKey: "platforms" as const,
     },
     {
       titleKey: "category.airlines.title",
@@ -96,6 +100,7 @@ function PageContent() {
       contentKey: "category.airlines.content",
       idealForKey: "category.airlines.idealfor",
       image: images.collaborations.airlines,
+      galleryKey: "airlines" as const,
     },
   ]
 
@@ -250,6 +255,7 @@ function PageContent() {
                 content={t(category.contentKey)}
                 idealFor={t(category.idealForKey)}
                 image={category.image}
+                galleryKey={category.galleryKey}
                 className={index === 0 ? "md:col-span-2 lg:col-span-1" : ""}
               />
             ))}

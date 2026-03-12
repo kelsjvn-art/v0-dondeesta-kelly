@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { CategoryDetailModal } from "@/components/category-detail-modal"
+import { CategoryDetailModal, type GalleryKey } from "@/components/category-detail-modal"
 
 interface CollaborationCardProps {
   title: string
@@ -11,6 +11,7 @@ interface CollaborationCardProps {
   content: string
   idealFor: string
   image: string
+  galleryKey: GalleryKey
   className?: string
 }
 
@@ -20,6 +21,7 @@ export function CollaborationCard({
   content,
   idealFor,
   image,
+  galleryKey,
   className,
 }: CollaborationCardProps) {
   const [open, setOpen] = useState(false)
@@ -60,6 +62,7 @@ export function CollaborationCard({
           content={content}
           idealFor={idealFor}
           image={image}
+          galleryKey={galleryKey}
           onClose={() => setOpen(false)}
         />
       )}
