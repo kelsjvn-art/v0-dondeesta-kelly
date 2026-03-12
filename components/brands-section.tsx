@@ -7,10 +7,10 @@ const brands = [
   { name: "Avianca Lifemiles", src: "/Lifemiles%20logo.png" },
   { name: "Arajet", src: "/arajet.png" },
   { name: "Curaçao Tourist Board", src: "/Curazao.webp" },
-  { name: "Mövenpick Resort Petra", src: "/movenpick%20resort%20Petra.jpg" },
+  { name: "Mövenpick Resort Petra", src: "/movenpick%20resort%20Petra.png" },
   { name: "Viajero Hostels", src: "/hotel-viajero.png" },
   { name: "Holafly", src: "/Holalfy.png" },
-  { name: "IATI Seguros", src: "/IATILOGO.jpg" },
+  { name: "IATI Seguros", src: "/IATILOGO.png" },
   { name: "Europcar", src: "/Europcar_logo.png" },
 ]
 
