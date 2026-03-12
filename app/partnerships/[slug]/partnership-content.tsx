@@ -26,10 +26,23 @@ function PartnershipInner({ slug }: { slug: string }) {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navigation />
+      <Navigation variant="sub-page" />
+
+      {/* Back button */}
+      <div className="fixed top-[60px] left-0 right-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border/30">
+        <div className="max-w-7xl mx-auto px-6 py-2">
+          <a
+            href="/#collaborations"
+            className="inline-flex items-center gap-2 text-xs tracking-wide text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <span aria-hidden="true">←</span>
+            {t("partnership.back")}
+          </a>
+        </div>
+      </div>
 
       {/* Hero — same layout as About Me: image left, text right */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 bg-background">
+      <section className="pt-36 md:pt-40 pb-12 md:pb-16 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
             {/* Image — left column */}

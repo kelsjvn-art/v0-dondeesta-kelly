@@ -4,25 +4,33 @@ import { useState, useEffect } from "react"
 import { useLanguage } from "@/lib/language-context"
 
 const navLinks = [
-  { key: "nav.home", href: "#home" },
-  { key: "nav.about", href: "#about" },
-  { key: "nav.destinations", href: "#destinations" },
-  { key: "nav.upcoming", href: "#upcoming" },
-  { key: "nav.collaborations", href: "#collaborations" },
-  { key: "nav.work", href: "#work" },
-  { key: "nav.contact", href: "#contact" },
+  { key: "nav.home", href: "#home", subPageHref: "/#home" },
+  { key: "nav.about", href: "#about", subPageHref: "/#about" },
+  { key: "nav.destinations", href: "#destinations", subPageHref: "/#destinations" },
+  { key: "nav.upcoming", href: "#upcoming", subPageHref: "/#upcoming" },
+  { key: "nav.collaborations", href: "#collaborations", subPageHref: "/#collaborations" },
+  { key: "nav.work", href: "#work", subPageHref: "/#work" },
+  { key: "nav.contact", href: "#contact", subPageHref: "/#contact" },
 ]
 
-export function Navigation() {
+interface NavigationProps {
+  variant?: "default" | "sub-page"
+}
+
+export function Navigation({ variant = "default" }: NavigationProps) {
   const { t, language, setLanguage } = useLanguage()
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(variant === "sub-page")
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
+    if (variant === "sub-page") {
+      setScrolled(true)
+      return
+    }
     const handleScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [variant])
 
   return (
     <header
@@ -32,7 +40,10 @@ export function Navigation() {
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="font-serif text-lg font-medium text-foreground tracking-tight">
+        <a
+          href={variant === "sub-page" ? "/#home" : "#home"}
+          className="font-serif text-lg font-medium text-foreground tracking-tight"
+        >
           Kelly Vega
         </a>
 
@@ -41,7 +52,7 @@ export function Navigation() {
           {navLinks.map((link) => (
             <li key={link.key}>
               <a
-                href={link.href}
+                href={variant === "sub-page" ? link.subPageHref : link.href}
                 className={`text-sm tracking-wide transition-colors hover:text-foreground ${
                   scrolled ? "text-muted-foreground" : "text-white/80 hover:text-white"
                 }`}
@@ -93,7 +104,7 @@ export function Navigation() {
             {navLinks.map((link) => (
               <li key={link.key}>
                 <a
-                  href={link.href}
+                  href={variant === "sub-page" ? link.subPageHref : link.href}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors tracking-wide"
                   onClick={() => setMenuOpen(false)}
                 >
