@@ -2,15 +2,16 @@
 
 import { useLanguage } from "@/lib/language-context"
 
-const brandNames = [
-  "Airbnb",
-  "Booking.com",
-  "Expedia",
-  "TripAdvisor",
-  "GetYourGuide",
-  "Viator",
-  "Klook",
-  "Hostelworld",
+const brands = [
+  { name: "Avianca", src: "/Avianca-Logo.png" },
+  { name: "Avianca Lifemiles", src: "/Lifemiles%20logo.png" },
+  { name: "Arajet", src: "/arajet.png" },
+  { name: "Curaçao Tourist Board", src: "/Curazao.webp" },
+  { name: "Mövenpick Resort Petra", src: "/movenpick%20resort%20Petra.jpg" },
+  { name: "Viajero Hostels", src: "/hotel-viajero.png" },
+  { name: "Holafly", src: "/Holalfy.png" },
+  { name: "IATI Seguros", src: "/IATILOGO.jpg" },
+  { name: "Europcar", src: "/Europcar_logo.png" },
 ]
 
 export function BrandsSection() {
@@ -28,15 +29,18 @@ export function BrandsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4 md:gap-y-8 md:gap-x-6">
-          {brandNames.map((brand) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+          {brands.map((brand) => (
             <div
-              key={brand}
-              className="flex items-center justify-center px-4 py-3 rounded-xl border border-border/40 bg-background/50"
+              key={brand.name}
+              className="group relative aspect-[3/2] rounded-2xl border border-border/40 bg-background overflow-hidden flex items-center justify-center p-4 transition-all duration-300 hover:scale-105 hover:shadow-md"
             >
-              <span className="text-muted-foreground/60 font-medium text-sm md:text-base tracking-wide hover:text-muted-foreground transition-colors text-center select-none">
-                {brand}
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={brand.src}
+                alt={brand.name}
+                className="w-full h-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
+              />
             </div>
           ))}
         </div>
