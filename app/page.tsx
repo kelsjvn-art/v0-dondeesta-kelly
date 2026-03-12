@@ -64,26 +64,31 @@ function PageContent() {
   const collaborationCategories = [
     {
       titleKey: "category.destinations.title",
+      subtitleKey: "category.destinations.subtitle",
       slug: "destination-tourism" as const,
       image: images.collaborations.destinations,
     },
     {
       titleKey: "category.hotels.title",
+      subtitleKey: "category.hotels.subtitle",
       slug: "hotels-unique-stays" as const,
       image: images.collaborations.hotels,
     },
     {
       titleKey: "category.brands.title",
+      subtitleKey: "category.brands.subtitle",
       slug: "travel-brand" as const,
       image: images.collaborations.brands,
     },
     {
       titleKey: "category.platforms.title",
+      subtitleKey: "category.platforms.subtitle",
       slug: "travel-platforms" as const,
       image: images.collaborations.platforms,
     },
     {
       titleKey: "category.airlines.title",
+      subtitleKey: "category.airlines.subtitle",
       slug: "transportation" as const,
       image: images.collaborations.airlines,
     },
@@ -250,6 +255,7 @@ function PageContent() {
               <CollaborationCard
                 key={index}
                 title={t(category.titleKey)}
+                subtitle={t(category.subtitleKey)}
                 slug={category.slug}
                 image={category.image}
                 className={index === 0 ? "md:col-span-2 lg:col-span-1" : ""}

@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 import { LanguageProvider, useLanguage } from "@/lib/language-context"
+import { Navigation } from "@/components/navigation"
 import { partnerships } from "@/lib/partnership-data"
 
 function PartnershipInner({ slug }: { slug: string }) {
@@ -25,59 +26,47 @@ function PartnershipInner({ slug }: { slug: string }) {
 
   return (
     <main className="min-h-screen bg-background">
+      <Navigation />
 
-      {/* Hero */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={partnership.heroImage}
-          alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/50 via-foreground/20 to-background" />
-
-        {/* Back button */}
-        <div className="absolute top-6 left-6 z-10">
-          <Link
-            href="/#collaborations"
-            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm tracking-wide group"
-          >
-            <span className="p-2 rounded-full bg-foreground/30 backdrop-blur-sm group-hover:bg-foreground/50 transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-            </span>
-            <span className="hidden sm:inline">{t("partnership.back")}</span>
-          </Link>
-        </div>
-
-        {/* Title */}
-        <div className="absolute bottom-16 left-0 right-0 px-6 text-center">
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-white tracking-tight text-balance max-w-4xl mx-auto">
-            {title}
-          </h1>
+      {/* Hero — same layout as About Me: image left, text right */}
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
+            {/* Image — left column */}
+            <div className="w-full md:w-2/5 flex-shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={partnership.heroImage}
+                alt={title}
+                className="w-full h-[520px] md:h-[640px] object-cover object-center rounded-2xl"
+              />
+            </div>
+            {/* Title + About — right column */}
+            <div className="w-full md:w-3/5">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 tracking-tight text-balance">
+                {title}
+              </h1>
+              <p className="text-primary text-xs tracking-[0.2em] uppercase mb-3">
+                {t("label.about")}
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                {about}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Content sections */}
-      <div className="max-w-3xl mx-auto px-6">
-
-        {/* About */}
-        <section className="py-16 md:py-20">
-          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-4">
-            {t("label.about")}
-          </p>
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-            {about}
-          </p>
-        </section>
-
+      <div className="max-w-4xl mx-auto px-6">
         <div className="border-t border-border/50" />
 
         {/* Content Creation */}
-        <section className="py-16 md:py-20">
-          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-6">
+        <section className="py-10 md:py-12">
+          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-5">
             {t("label.contentcreation")}
           </p>
-          <ul className="space-y-4">
+          <ul className="space-y-3">
             {contentItems.map((item, i) => (
               <li key={i} className="flex items-start gap-4">
                 <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -90,11 +79,11 @@ function PartnershipInner({ slug }: { slug: string }) {
         <div className="border-t border-border/50" />
 
         {/* Ideal For */}
-        <section className="py-16 md:py-20">
-          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-6">
+        <section className="py-10 md:py-12">
+          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-5">
             {t("label.idealfor")}
           </p>
-          <ul className="space-y-4">
+          <ul className="space-y-3">
             {idealForItems.map((item, i) => (
               <li key={i} className="flex items-start gap-4">
                 <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -106,9 +95,9 @@ function PartnershipInner({ slug }: { slug: string }) {
       </div>
 
       {/* Gallery */}
-      <section className="py-8 md:py-12 bg-secondary/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-8 text-center">
+      <section className="py-10 md:py-12 bg-secondary/30">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-6">
             {t("label.gallery")}
           </p>
           <div className="columns-2 md:columns-3 gap-3 md:gap-4">
@@ -118,7 +107,8 @@ function PartnershipInner({ slug }: { slug: string }) {
                 <img
                   src={src}
                   alt={`${title} ${i + 1}`}
-                  className="w-full h-auto object-cover block"
+                  className="w-full object-cover block"
+                  style={{ maxHeight: "280px", objectFit: "cover" }}
                   loading="lazy"
                 />
               </div>
@@ -128,11 +118,11 @@ function PartnershipInner({ slug }: { slug: string }) {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 md:py-28 px-6 bg-foreground text-primary-foreground text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-medium mb-6 tracking-tight">
+      <section className="py-16 md:py-20 px-6 bg-foreground text-primary-foreground text-center">
+        <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4 tracking-tight">
           {t("contact.title")}
         </h2>
-        <p className="text-primary-foreground/80 text-lg mb-10 leading-relaxed max-w-xl mx-auto">
+        <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed max-w-xl mx-auto">
           {t("contact.description")}
         </p>
         <a
@@ -142,16 +132,6 @@ function PartnershipInner({ slug }: { slug: string }) {
           <Mail className="w-4 h-4" />
           {t("partnership.contact")}
         </a>
-
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
-          <Link
-            href="/#collaborations"
-            className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm tracking-wide"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            {t("partnership.back")}
-          </Link>
-        </div>
       </section>
     </main>
   )
