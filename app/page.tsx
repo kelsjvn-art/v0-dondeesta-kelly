@@ -64,43 +64,28 @@ function PageContent() {
   const collaborationCategories = [
     {
       titleKey: "category.destinations.title",
-      aboutKey: "category.destinations.about",
-      contentKey: "category.destinations.content",
-      idealForKey: "category.destinations.idealfor",
+      slug: "destination-tourism" as const,
       image: images.collaborations.destinations,
-      galleryKey: "destinations" as const,
     },
     {
       titleKey: "category.hotels.title",
-      aboutKey: "category.hotels.about",
-      contentKey: "category.hotels.content",
-      idealForKey: "category.hotels.idealfor",
+      slug: "hotels-unique-stays" as const,
       image: images.collaborations.hotels,
-      galleryKey: "hotels" as const,
     },
     {
       titleKey: "category.brands.title",
-      aboutKey: "category.brands.about",
-      contentKey: "category.brands.content",
-      idealForKey: "category.brands.idealfor",
+      slug: "travel-brand" as const,
       image: images.collaborations.brands,
-      galleryKey: "brands" as const,
     },
     {
       titleKey: "category.platforms.title",
-      aboutKey: "category.platforms.about",
-      contentKey: "category.platforms.content",
-      idealForKey: "category.platforms.idealfor",
+      slug: "travel-platforms" as const,
       image: images.collaborations.platforms,
-      galleryKey: "platforms" as const,
     },
     {
       titleKey: "category.airlines.title",
-      aboutKey: "category.airlines.about",
-      contentKey: "category.airlines.content",
-      idealForKey: "category.airlines.idealfor",
+      slug: "transportation" as const,
       image: images.collaborations.airlines,
-      galleryKey: "airlines" as const,
     },
   ]
 
@@ -251,11 +236,8 @@ function PageContent() {
               <CollaborationCard
                 key={index}
                 title={t(category.titleKey)}
-                about={t(category.aboutKey)}
-                content={t(category.contentKey)}
-                idealFor={t(category.idealForKey)}
+                slug={category.slug}
                 image={category.image}
-                galleryKey={category.galleryKey}
                 className={index === 0 ? "md:col-span-2 lg:col-span-1" : ""}
               />
             ))}

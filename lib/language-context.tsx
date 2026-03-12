@@ -90,6 +90,11 @@ const translations: Record<Language, Record<string, string>> = {
     "label.about": "About",
     "label.contentcreation": "Content Creation",
     "label.idealfor": "Ideal For",
+    "label.gallery": "Gallery",
+
+    // Partnership page
+    "partnership.back": "Back to Partnerships",
+    "partnership.contact": "Work Together",
 
     // Brands
     "brands.label": "Featured In",
@@ -191,6 +196,11 @@ const translations: Record<Language, Record<string, string>> = {
     "label.about": "Sobre",
     "label.contentcreation": "Contenido",
     "label.idealfor": "Ideal para",
+    "label.gallery": "Galería",
+
+    // Partnership page
+    "partnership.back": "Volver a Alianzas",
+    "partnership.contact": "Trabajemos Juntos",
 
     // Brands
     "brands.label": "Destacada en",
