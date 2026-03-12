@@ -28,14 +28,16 @@ export function BrandsSection() {
           </h2>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4 md:gap-y-8 md:gap-x-6">
           {brandNames.map((brand) => (
-            <span
+            <div
               key={brand}
-              className="text-muted-foreground/60 font-medium text-sm md:text-base tracking-wide hover:text-muted-foreground transition-colors"
+              className="flex items-center justify-center px-4 py-3 rounded-xl border border-border/40 bg-background/50"
             >
-              {brand}
-            </span>
+              <span className="text-muted-foreground/60 font-medium text-sm md:text-base tracking-wide hover:text-muted-foreground transition-colors text-center select-none">
+                {brand}
+              </span>
+            </div>
           ))}
         </div>
       </div>
