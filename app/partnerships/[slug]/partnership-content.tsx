@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Mail } from "lucide-react"
 import { LanguageProvider, useLanguage } from "@/lib/language-context"
@@ -29,13 +28,11 @@ function PartnershipInner({ slug }: { slug: string }) {
 
       {/* Hero */}
       <section className="relative h-screen w-full overflow-hidden">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={partnership.heroImage}
           alt={title}
-          fill
-          priority
-          className="object-cover"
-          unoptimized
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/50 via-foreground/20 to-background" />
 
@@ -114,16 +111,15 @@ function PartnershipInner({ slug }: { slug: string }) {
           <p className="text-primary text-xs tracking-[0.2em] uppercase mb-8 text-center">
             {t("label.gallery")}
           </p>
-          <div className="columns-2 md:columns-3 gap-3 md:gap-4 space-y-3 md:space-y-4">
+          <div className="columns-2 md:columns-3 gap-3 md:gap-4">
             {partnership.gallery.map((src, i) => (
-              <div key={i} className="break-inside-avoid overflow-hidden rounded-xl">
-                <Image
+              <div key={i} className="break-inside-avoid mb-3 md:mb-4 overflow-hidden rounded-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={src}
                   alt={`${title} ${i + 1}`}
-                  width={600}
-                  height={800}
-                  className="w-full h-auto object-cover"
-                  unoptimized
+                  className="w-full h-auto object-cover block"
+                  loading="lazy"
                 />
               </div>
             ))}
