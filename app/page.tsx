@@ -30,16 +30,11 @@ const images = {
 
   // Only first photo per collaboration category
   collaborations: {
-    destinations:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.38%20PM%20%281%29-FAp60OqYjBfy7ywwwwvjplLtbnDFyO.jpeg",
-    hotels:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.45.18%20PM%20%287%29-sMlFUahkJDd46401ci6krED3vJuwBg.jpeg",
-    brands:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.38%20PM%20%284%29-Y74B2Q7EWnbLu4djfFGf23l51UKAcL.jpeg",
-    platforms:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.38%20PM%20%282%29-EC9axtoz2yd0oFarhwUqGT9PZhZDrm.jpeg",
-    airlines:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.36%20PM%20%283%29-rQybA30kww7rH0DgmO1YpBdQVGcmK6.jpeg",
+    destinations: "/destination-portada.jpeg",
+    hotels: "/hotel-portada.jpeg",
+    brands: "/travelbrand-portada.jpeg",
+    platforms: "/plataforms-portada.jpeg",
+    airlines: "/transportation-portada.jpeg",
   },
 
   work: [
