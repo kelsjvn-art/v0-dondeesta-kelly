@@ -12,6 +12,7 @@ const brands = [
   { name: "Holafly", src: "/Holalfy.png" },
   { name: "IATI Seguros", src: "/IATILOGO.png" },
   { name: "Europcar", src: "/Europcar_logo.png" },
+  { name: "TOTTO", src: "/totto-logo.jpg" },
 ]
 
 export function BrandsSection() {
