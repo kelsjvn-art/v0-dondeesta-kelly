@@ -191,7 +191,7 @@ function PageContent() {
       {/* Upcoming Travel Section */}
       <section id="upcoming" className="py-20 md:py-28 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* Left — text */}
             <div>
@@ -221,50 +221,22 @@ function PageContent() {
             </div>
 
             {/* Right — 6 verticales en 2 filas de 3 */}
-<div className="grid grid-cols-3 gap-3 md:gap-4">
-  {images.upcoming.map((src, index) => (
-    <div
-      key={index}
-      className="relative aspect-[3/4] overflow-hidden rounded-2xl group"
-    >
-      <Image
-        src={src}
-        alt={`Upcoming travel ${index + 1}`}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
-  ))}
-</div>
-
-              {/* upcoming-3, 5, 6, 7, 8, 9 — 6 verticales en 2 filas de 3 */}
-              <div className="grid grid-cols-3 gap-3 md:gap-4">
-                {images.upcoming.slice(2, 8).map((src, index) => (
-                  <div
-                    key={index}
-                    className="relative aspect-[3/4] overflow-hidden rounded-2xl group"
-                  >
-                    <Image
-                      src={src}
-                      alt={`Upcoming travel vertical ${index + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* upcoming-2 — horizontal abajo */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl group">
-                <Image
-                  src={images.upcoming[1]}
-                  alt="Upcoming travel 2"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-
+            <div className="grid grid-cols-3 gap-3 md:gap-4">
+              {images.upcoming.map((src, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-[3/4] overflow-hidden rounded-2xl group"
+                >
+                  <Image
+                    src={src}
+                    alt={`Upcoming travel ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
       </section>
