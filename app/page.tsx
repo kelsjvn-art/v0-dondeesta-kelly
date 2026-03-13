@@ -20,16 +20,16 @@ const images = {
   ],
 
   upcoming: [
-  "/upcoming-1.jpeg",
-  "/upcoming-2.jpeg",
-  "/upcoming-3.jpeg",
-  "/upcoming-4.jpeg",
-  "/upcoming-5.jpeg",
-  "/upcoming-6.jpeg",
-  "/upcoming-7.jpeg",
-  "/upcoming-8.jpeg",
-  "/upcoming-9.jpeg",
-],
+    "/upcoming-1.jpeg",
+    "/upcoming-2.jpeg",
+    "/upcoming-3.jpeg",
+    "/upcoming-4.jpeg",
+    "/upcoming-5.jpeg",
+    "/upcoming-6.jpeg",
+    "/upcoming-7.jpeg",
+    "/upcoming-8.jpeg",
+    "/upcoming-9.jpeg",
+  ],
 
   // Only first photo per collaboration category
   collaborations: {
@@ -174,7 +174,6 @@ function PageContent() {
               {t("destinations.title")}
             </h2>
           </div>
-
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {images.destinations.map((src, index) => (
               <div
@@ -197,7 +196,8 @@ function PageContent() {
       {/* Upcoming Travel Section */}
       <section id="upcoming" className="py-20 md:py-28 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left — text */}
             <div>
               <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3">
                 {t("upcoming.label")}
@@ -223,61 +223,68 @@ function PageContent() {
                 ))}
               </ul>
             </div>
-            <div className="grid grid-cols-3 gap-3 md:gap-4">
-  {/* Foto grande izquierda — ocupa 2 filas */}
-  <div className="relative col-span-1 overflow-hidden rounded-2xl group" style={{ gridRow: "span 2" }}>
-    <div className="relative min-h-[420px] md:min-h-[520px] h-full overflow-hidden rounded-2xl">
-      <Image
-        src={images.upcoming[0]}
-        alt="Upcoming travel 1"
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
-  </div>
 
-  {/* 4 fotos pequeñas — columnas 2 y 3, filas 1 y 2 */}
-  {images.upcoming.slice(1, 5).map((src, index) => (
-    <div
-      key={index}
-      className="relative aspect-[4/3] overflow-hidden rounded-2xl group"
-    >
-      <Image
-        src={src}
-        alt={`Upcoming travel ${index + 2}`}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
-  ))}
+            {/* Right — masonry grid */}
+            <div className="grid grid-cols-3 gap-3 md:gap-4" style={{ gridAutoRows: "auto" }}>
+              {/* Foto 1 — grande, ocupa 2 filas */}
+              <div
+                className="relative col-span-1 overflow-hidden rounded-2xl group"
+                style={{ gridRow: "span 2" }}
+              >
+                <div className="relative w-full h-full min-h-[420px] md:min-h-[520px]">
+                  <Image
+                    src={images.upcoming[0]}
+                    alt="Upcoming travel 1"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              </div>
 
-  {/* 3 fotos fila inferior */}
-  {images.upcoming.slice(5, 8).map((src, index) => (
-    <div
-      key={index}
-      className="relative aspect-video overflow-hidden rounded-2xl group"
-    >
-      <Image
-        src={src}
-        alt={`Upcoming travel ${index + 6}`}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
-  ))}
+              {/* Fotos 2–5 — pequeñas, columnas 2 y 3 */}
+              {images.upcoming.slice(1, 5).map((src, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-[4/3] overflow-hidden rounded-2xl group"
+                >
+                  <Image
+                    src={src}
+                    alt={`Upcoming travel ${index + 2}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              ))}
 
-  {/* Última foto — ancho completo */}
-  <div className="relative col-span-3 aspect-[21/9] overflow-hidden rounded-2xl group">
-    <Image
-      src={images.upcoming[8]}
-      alt="Upcoming travel 9"
-      fill
-      className="object-cover transition-transform duration-700 group-hover:scale-105"
-    />
-  </div>
+              {/* Fotos 6–8 — fila inferior, 3 columnas */}
+              {images.upcoming.slice(5, 8).map((src, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-video overflow-hidden rounded-2xl group"
+                >
+                  <Image
+                    src={src}
+                    alt={`Upcoming travel ${index + 6}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+
+              {/* Foto 9 — ancho completo */}
+              <div className="relative col-span-3 aspect-[21/9] overflow-hidden rounded-2xl group">
+                <Image
+                  src={images.upcoming[8]}
+                  alt="Upcoming travel 9"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
       {/* Collaboration Categories Section */}
       <section id="collaborations" className="py-20 md:py-28 px-6 bg-secondary/50">
         <div className="max-w-7xl mx-auto">
@@ -292,7 +299,6 @@ function PageContent() {
               {t("collaborations.longterm")}
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {collaborationCategories.map((category, index) => (
               <CollaborationCard
@@ -322,7 +328,6 @@ function PageContent() {
               {t("work.title")}
             </h2>
           </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {images.work.map((src, index) => (
               <div
@@ -354,7 +359,6 @@ function PageContent() {
           <p className="text-primary-foreground/80 text-lg md:text-xl mb-12 leading-relaxed">
             {t("contact.description")}
           </p>
-
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
             <a
               href="mailto:Dondeestakelly@gmail.com"
@@ -377,7 +381,6 @@ function PageContent() {
               <span>@dondeesta_kelly</span>
             </a>
           </div>
-
           <div className="mt-16 pt-8 border-t border-primary-foreground/20">
             <div className="flex items-center justify-center gap-2 text-primary-foreground/60 text-sm">
               <MapPin className="w-4 h-4" />
