@@ -20,8 +20,6 @@ const images = {
   ],
 
   upcoming: [
-    "/upcoming-1.jpeg",
-    "/upcoming-2.jpeg",
     "/upcoming-3.jpeg",
     "/upcoming-5.jpeg",
     "/upcoming-6.jpeg",
