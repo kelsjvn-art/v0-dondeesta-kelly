@@ -32,7 +32,7 @@ export function CollaborationCard({
           src={image}
           alt={title}
           fill
-          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+className="object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
