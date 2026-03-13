@@ -20,9 +20,16 @@ const images = {
   ],
 
   upcoming: [
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.45.18%20PM%20%283%29-1GpfoUEhcMY7JpvN4Zu6grmGdG4tTD.jpeg",
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.45.18%20PM-sMmFlNsVlGlUxnn90Ub6lWdEInfuf0.jpeg",
-  ],
+  "/upcoming-1.jpeg",
+  "/upcoming-2.jpeg",
+  "/upcoming-3.jpeg",
+  "/upcoming-4.jpeg",
+  "/upcoming-5.jpeg",
+  "/upcoming-6.jpeg",
+  "/upcoming-7.jpeg",
+  "/upcoming-8.jpeg",
+  "/upcoming-9.jpeg",
+],
 
   // Only first photo per collaboration category
   collaborations: {
@@ -216,24 +223,59 @@ function PageContent() {
                 ))}
               </ul>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {images.upcoming.map((src, index) => (
-                <div
-                  key={index}
-                  className="relative aspect-[3/4] overflow-hidden rounded-2xl group"
-                >
-                  <Image
-                    src={src}
-                    alt={`Upcoming travel ${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+            <div className="grid grid-cols-3 gap-3 md:gap-4">
+  {/* Foto grande izquierda — ocupa 2 filas */}
+  <div className="relative col-span-1 overflow-hidden rounded-2xl group" style={{ gridRow: "span 2" }}>
+    <div className="relative min-h-[420px] md:min-h-[520px] h-full overflow-hidden rounded-2xl">
+      <Image
+        src={images.upcoming[0]}
+        alt="Upcoming travel 1"
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
+  </div>
+
+  {/* 4 fotos pequeñas — columnas 2 y 3, filas 1 y 2 */}
+  {images.upcoming.slice(1, 5).map((src, index) => (
+    <div
+      key={index}
+      className="relative aspect-[4/3] overflow-hidden rounded-2xl group"
+    >
+      <Image
+        src={src}
+        alt={`Upcoming travel ${index + 2}`}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
+  ))}
+
+  {/* 3 fotos fila inferior */}
+  {images.upcoming.slice(5, 8).map((src, index) => (
+    <div
+      key={index}
+      className="relative aspect-video overflow-hidden rounded-2xl group"
+    >
+      <Image
+        src={src}
+        alt={`Upcoming travel ${index + 6}`}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
+  ))}
+
+  {/* Última foto — ancho completo */}
+  <div className="relative col-span-3 aspect-[21/9] overflow-hidden rounded-2xl group">
+    <Image
+      src={images.upcoming[8]}
+      alt="Upcoming travel 9"
+      fill
+      className="object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  </div>
+</div>
 
       {/* Collaboration Categories Section */}
       <section id="collaborations" className="py-20 md:py-28 px-6 bg-secondary/50">
