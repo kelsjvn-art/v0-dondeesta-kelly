@@ -275,8 +275,9 @@ function PageContent() {
       className="object-cover transition-transform duration-700 group-hover:scale-105"
     />
   </div>
-</div>
-
+          </div>
+        </div>
+      </section>
       {/* Collaboration Categories Section */}
       <section id="collaborations" className="py-20 md:py-28 px-6 bg-secondary/50">
         <div className="max-w-7xl mx-auto">
