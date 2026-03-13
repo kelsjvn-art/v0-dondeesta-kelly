@@ -23,7 +23,6 @@ const images = {
     "/upcoming-1.jpeg",
     "/upcoming-2.jpeg",
     "/upcoming-3.jpeg",
-    "/upcoming-4.jpeg",
     "/upcoming-5.jpeg",
     "/upcoming-6.jpeg",
     "/upcoming-7.jpeg",
@@ -135,7 +134,6 @@ function PageContent() {
       <section id="about" className="py-20 md:py-28 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
-            {/* Image — left column */}
             <div className="w-full md:w-2/5 flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -144,7 +142,6 @@ function PageContent() {
                 className="w-full h-[520px] md:h-[640px] object-cover object-top rounded-2xl"
               />
             </div>
-            {/* Text — right column */}
             <div className="w-full md:w-3/5">
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8 tracking-tight">
                 {t("about.title")}
@@ -197,6 +194,7 @@ function PageContent() {
       <section id="upcoming" className="py-20 md:py-28 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
             {/* Left — text */}
             <div>
               <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3">
@@ -224,62 +222,46 @@ function PageContent() {
               </ul>
             </div>
 
-            {/* Right — masonry grid */}
-            <div className="grid grid-cols-3 gap-3 md:gap-4" style={{ gridAutoRows: "auto" }}>
-              {/* Foto 1 — grande, ocupa 2 filas */}
-              <div
-                className="relative col-span-1 overflow-hidden rounded-2xl group"
-                style={{ gridRow: "span 2" }}
-              >
-                <div className="relative w-full h-full min-h-[420px] md:min-h-[520px]">
-                  <Image
-                    src={images.upcoming[0]}
-                    alt="Upcoming travel 1"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              </div>
+            {/* Right — photo grid: horizontal, 6 verticales, horizontal */}
+            <div className="flex flex-col gap-3 md:gap-4">
 
-              {/* Fotos 2–5 — pequeñas, columnas 2 y 3 */}
-              {images.upcoming.slice(1, 5).map((src, index) => (
-                <div
-                  key={index}
-                  className="relative aspect-[4/3] overflow-hidden rounded-2xl group"
-                >
-                  <Image
-                    src={src}
-                    alt={`Upcoming travel ${index + 2}`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              ))}
-
-              {/* Fotos 6–8 — fila inferior, 3 columnas */}
-              {images.upcoming.slice(5, 8).map((src, index) => (
-                <div
-                  key={index}
-                  className="relative aspect-video overflow-hidden rounded-2xl group"
-                >
-                  <Image
-                    src={src}
-                    alt={`Upcoming travel ${index + 6}`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              ))}
-
-              {/* Foto 9 — ancho completo */}
-              <div className="relative col-span-3 aspect-[21/9] overflow-hidden rounded-2xl group">
+              {/* upcoming-1 — horizontal arriba */}
+              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl group">
                 <Image
-                  src={images.upcoming[8]}
-                  alt="Upcoming travel 9"
+                  src={images.upcoming[0]}
+                  alt="Upcoming travel 1"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
+
+              {/* upcoming-3, 5, 6, 7, 8, 9 — 6 verticales en 2 filas de 3 */}
+              <div className="grid grid-cols-3 gap-3 md:gap-4">
+                {images.upcoming.slice(2, 8).map((src, index) => (
+                  <div
+                    key={index}
+                    className="relative aspect-[3/4] overflow-hidden rounded-2xl group"
+                  >
+                    <Image
+                      src={src}
+                      alt={`Upcoming travel vertical ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* upcoming-2 — horizontal abajo */}
+              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl group">
+                <Image
+                  src={images.upcoming[1]}
+                  alt="Upcoming travel 2"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
             </div>
           </div>
         </div>
