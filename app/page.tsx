@@ -220,18 +220,22 @@ function PageContent() {
               </ul>
             </div>
 
-            {/* Right — photo grid: horizontal, 6 verticales, horizontal */}
-            <div className="flex flex-col gap-3 md:gap-4">
-
-              {/* upcoming-1 — horizontal arriba */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl group">
-                <Image
-                  src={images.upcoming[0]}
-                  alt="Upcoming travel 1"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
+            {/* Right — 6 verticales en 2 filas de 3 */}
+<div className="grid grid-cols-3 gap-3 md:gap-4">
+  {images.upcoming.map((src, index) => (
+    <div
+      key={index}
+      className="relative aspect-[3/4] overflow-hidden rounded-2xl group"
+    >
+      <Image
+        src={src}
+        alt={`Upcoming travel ${index + 1}`}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
+  ))}
+</div>
 
               {/* upcoming-3, 5, 6, 7, 8, 9 — 6 verticales en 2 filas de 3 */}
               <div className="grid grid-cols-3 gap-3 md:gap-4">
