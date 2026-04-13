@@ -1,156 +1,77 @@
-"use client"
+export type PartnershipSlug =
+  | "destination-tourism"
+  | "hotels-unique-stays"
+  | "travel-brand"
+  | "travel-platforms"
+  | "transportation"
 
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { Mail } from "lucide-react"
-import { LanguageProvider, useLanguage } from "@/lib/language-context"
-import { Navigation } from "@/components/navigation"
-import { partnerships } from "@/lib/partnership-data"
-
-function PartnershipInner({ slug }: { slug: string }) {
-  const { t } = useLanguage()
-
-  const partnership = partnerships.find((p) => p.slug === slug)
-  if (!partnership) notFound()
-
-  const title = t(partnership.titleKey)
-  const about = t(partnership.aboutKey)
-  const contentItems = t(partnership.contentKey)
-    .split(" / ")
-    .map((s) => s.trim())
-    .filter(Boolean)
-  const idealForItems = t(partnership.idealForKey)
-    .split(" / ")
-    .map((s) => s.trim())
-    .filter(Boolean)
-
-  return (
-    <main className="min-h-screen bg-background">
-      <Navigation variant="sub-page" />
-
-      {/* Back button */}
-      <div className="fixed top-[60px] left-0 right-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border/30">
-        <div className="max-w-7xl mx-auto px-6 py-2">
-          <a
-            href="/#collaborations"
-            className="inline-flex items-center gap-2 text-xs tracking-wide text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <span aria-hidden="true">←</span>
-            {t("partnership.back")}
-          </a>
-        </div>
-      </div>
-
-      {/* Hero — same layout as About Me: image left, text right */}
-      <section className="pt-36 md:pt-40 pb-12 md:pb-16 px-6 bg-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
-            <div className="w-full md:w-2/5 flex-shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={partnership.heroImage}
-                alt={title}
-                className="w-full h-[520px] md:h-[640px] object-cover object-center rounded-2xl"
-              />
-            </div>
-            <div className="w-full md:w-3/5">
-              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 tracking-tight text-balance">
-                {title}
-              </h1>
-              <p className="text-primary text-xs tracking-[0.2em] uppercase mb-3">
-                {t("label.about")}
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed text-justify">
-                {about}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Content sections */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-border/50" />
-
-        {/* Content Creation */}
-        <section className="py-10 md:py-12">
-          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-5">
-            {t("label.contentcreation")}
-          </p>
-          <ul className="space-y-3">
-            {contentItems.map((item, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-foreground text-base md:text-lg leading-relaxed text-justify">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <div className="border-t border-border/50" />
-
-        {/* Ideal For */}
-        <section className="py-10 md:py-12">
-          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-5">
-            {t("label.idealfor")}
-          </p>
-          <ul className="space-y-3">
-            {idealForItems.map((item, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-foreground text-base md:text-lg leading-relaxed text-justify">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
-
-      {/* Gallery */}
-      <section className="py-10 md:py-12 bg-secondary/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-primary text-xs tracking-[0.2em] uppercase mb-6">
-            {t("label.gallery")}
-          </p>
-          <div className="columns-2 md:columns-3 gap-3 md:gap-4">
-            {partnership.gallery.map((src, i) => (
-              <div key={i} className="break-inside-avoid mb-3 md:mb-4 overflow-hidden rounded-xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={`${title} ${i + 1}`}
-                  className="w-full h-auto block"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="py-16 md:py-20 px-6 bg-foreground text-primary-foreground text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4 tracking-tight">
-          {t("contact.title")}
-        </h2>
-        <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed max-w-xl mx-auto text-justify">
-          {t("contact.description")}
-        </p>
-        <a
-          href="mailto:Dondeestakelly@gmail.com"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors text-sm tracking-wide"
-        >
-          <Mail className="w-4 h-4" />
-          {t("partnership.contact")}
-        </a>
-      </section>
-    </main>
-  )
+export interface PartnershipMeta {
+  slug: PartnershipSlug
+  heroImage: string
+  titleKey: string
+  aboutKey: string
+  contentKey: string
+  idealForKey: string
+  gallery: string[]
 }
 
-export function PartnershipContent({ slug }: { slug: string }) {
-  return (
-    <LanguageProvider>
-      <PartnershipInner slug={slug} />
-    </LanguageProvider>
-  )
+export const partnerships: PartnershipMeta[] = [
+  {
+    slug: "destination-tourism",
+    heroImage: "/Destination-01.jpeg",
+    titleKey: "category.destinations.title",
+    aboutKey: "category.destinations.about",
+    contentKey: "category.destinations.content",
+    idealForKey: "category.destinations.idealfor",
+    gallery: Array.from({ length: 18 }, (_, i) => `/Destination-${String(i + 1).padStart(2, "0")}.jpeg`),
+  },
+  {
+    slug: "hotels-unique-stays",
+    heroImage: "/Hotel-01.jpeg",
+    titleKey: "category.hotels.title",
+    aboutKey: "category.hotels.about",
+    contentKey: "category.hotels.content",
+    idealForKey: "category.hotels.idealfor",
+    gallery: ["/Hotel-01.jpeg","/Hotel-02.jpeg","/Hotel-03.jpeg","/Hotel-04.jpeg","/Hotel-05.jpeg","/Hotel-06.jpeg","/Hotel-08.jpeg","/Hotel-09.jpeg","/Hotel-10.jpeg","/Hotel-11.jpeg","/Hotel-12.jpeg","/Hotel-13.jpeg","/Hotel-14.jpeg","/Hotel-15.jpeg","/Hotel-16.jpeg","/Hotel-17.jpeg","/Hotel-18.jpeg","/Hotel-19.jpeg","/Hotel-20.jpeg","/Hotel-21.jpeg","/Hotel-22.jpeg","/Hotel-23.jpeg","/Hotel-24.jpeg"],
+  },
+  {
+    slug: "travel-brand",
+    heroImage: "/Travelbrand-01.jpeg",
+    titleKey: "category.brands.title",
+    aboutKey: "category.brands.about",
+    contentKey: "category.brands.content",
+    idealForKey: "category.brands.idealfor",
+    gallery: Array.from({ length: 12 }, (_, i) => `/Travelbrand-${String(i + 1).padStart(2, "0")}.jpeg`),
+  },
+  {
+    slug: "travel-platforms",
+    heroImage: "/Experiences-01.jpeg",
+    titleKey: "category.platforms.title",
+    aboutKey: "category.platforms.about",
+    contentKey: "category.platforms.content",
+    idealForKey: "category.platforms.idealfor",
+    gallery: Array.from({ length: 16 }, (_, i) => `/Experiences-${String(i + 1).padStart(2, "0")}.jpeg`),
+  },
+  {
+    slug: "transportation",
+    heroImage: "/Transportation-01.jpeg",
+    titleKey: "category.airlines.title",
+    aboutKey: "category.airlines.about",
+    contentKey: "category.airlines.content",
+    idealForKey: "category.airlines.idealfor",
+    gallery: Array.from({ length: 15 }, (_, i) => `/Transportation-${String(i + 1).padStart(2, "0")}.jpeg`),
+  },
+]
+
+export const slugToCardImage: Record<PartnershipSlug, string> = {
+  "destination-tourism":
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.38%20PM%20%281%29-FAp60OqYjBfy7ywwwwvjplLtbnDFyO.jpeg",
+  "hotels-unique-stays":
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.45.18%20PM%20%287%29-sMlFUahkJDd46401ci6krED3vJuwBg.jpeg",
+  "travel-brand":
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.38%20PM%20%284%29-Y74B2Q7EWnbLu4djfFGf23l51UKAcL.jpeg",
+  "travel-platforms":
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.38%20PM%20%282%29-EC9axtoz2yd0oFarhwUqGT9PZhZDrm.jpeg",
+  transportation:
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-10%20at%202.19.36%20PM%20%283%29-rQybA30kww7rH0DgmO1YpBdQVGcmK6.jpeg",
 }
