@@ -143,8 +143,7 @@ function PageContent() {
                 {t("about.description")
                   .split("\n")
                   .map((paragraph, i) => (
-                    <p key={i} className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                      {paragraph}
+<p key={i} className="text-muted-foreground text-lg md:text-xl leading-relaxed text-justify">                      {paragraph}
                     </p>
                   ))}
               </div>
