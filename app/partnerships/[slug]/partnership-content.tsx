@@ -62,7 +62,7 @@ function PartnershipInner({ slug }: { slug: string }) {
               <p className="text-primary text-xs tracking-[0.2em] uppercase mb-3">
                 {t("label.about")}
               </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed text-justify">
                 {about}
               </p>
             </div>
@@ -83,7 +83,7 @@ function PartnershipInner({ slug }: { slug: string }) {
             {contentItems.map((item, i) => (
               <li key={i} className="flex items-start gap-4">
                 <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-foreground text-base md:text-lg leading-relaxed">{item}</span>
+                <span className="text-foreground text-base md:text-lg leading-relaxed text-justify">{item}</span>
               </li>
             ))}
           </ul>
@@ -100,7 +100,7 @@ function PartnershipInner({ slug }: { slug: string }) {
             {idealForItems.map((item, i) => (
               <li key={i} className="flex items-start gap-4">
                 <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-foreground text-base md:text-lg leading-relaxed">{item}</span>
+                <span className="text-foreground text-base md:text-lg leading-relaxed text-justify">{item}</span>
               </li>
             ))}
           </ul>
@@ -135,7 +135,7 @@ function PartnershipInner({ slug }: { slug: string }) {
         <h2 className="font-serif text-3xl md:text-4xl font-medium mb-4 tracking-tight">
           {t("contact.title")}
         </h2>
-        <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed max-w-xl mx-auto">
+        <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed max-w-xl mx-auto text-justify">
           {t("contact.description")}
         </p>
         <a
