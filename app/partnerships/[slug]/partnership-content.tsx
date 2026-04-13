@@ -45,7 +45,6 @@ function PartnershipInner({ slug }: { slug: string }) {
       <section className="pt-36 md:pt-40 pb-12 md:pb-16 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
-            {/* Image — left column */}
             <div className="w-full md:w-2/5 flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -54,7 +53,6 @@ function PartnershipInner({ slug }: { slug: string }) {
                 className="w-full h-[520px] md:h-[640px] object-cover object-center rounded-2xl"
               />
             </div>
-            {/* Title + About — right column */}
             <div className="w-full md:w-3/5">
               <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 tracking-tight text-balance">
                 {title}
@@ -120,8 +118,7 @@ function PartnershipInner({ slug }: { slug: string }) {
                 <img
                   src={src}
                   alt={`${title} ${i + 1}`}
-                  className="w-full object-cover block"
-                  style={{ maxHeight: "280px", objectFit: "cover" }}
+                  className="w-full h-auto block"
                   loading="lazy"
                 />
               </div>
