@@ -34,8 +34,10 @@ export const partnerships: PartnershipMeta[] = [
     aboutKey: "category.hotels.about",
     contentKey: "category.hotels.content",
     idealForKey: "category.hotels.idealfor",
-    gallery: Array.from({ length: 24 }, (_, i) => `/Hotel-${String(i + 1).padStart(2, "0")}.jpeg`),
-  },
+  gallery: [
+  ...Array.from({ length: 6 }, (_, i) => `/Hotel-${String(i + 1).padStart(2, "0")}.jpeg`),
+  ...Array.from({ length: 17 }, (_, i) => `/Hotel-${String(i + 9).padStart(2, "0")}.jpeg`),
+],
   {
     slug: "travel-brand",
     heroImage: "/Travelbrand-01.jpeg",
